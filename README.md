@@ -1,0 +1,1 @@
+# Magaza-Satis-Takibi-Programi
