@@ -77,7 +77,7 @@ def main ():
          " (tv, bilgisayar, beyaz eşya, diğer) : ")
         satis_tutari = float (input("Saticinin satis tutarini giriniz : "))
         print("")
-        satis = Magaza(magaza_adi, satici_adi, satici_cinsi)
+        satis = Magaza(magaza_adi.strip().capitalize(), satici_adi.strip().capitalize(), satici_cinsi.strip().capitalize())
         
         key1 = satis.get_magaza_adi()
         key2 = (satis.get_satici_adi(),satis.get_satici_cinsi())
