@@ -1,5 +1,8 @@
 class Magaza :
 
+    magaza_toplamlari = []
+    magaza_dict = {}
+    
     def __init__ (self, magaza_adi, satici_adi, satici_cinsi):
 
         self.__magaza_adi = magaza_adi
@@ -47,8 +50,8 @@ class Magaza :
                     Magaza.magaza_toplamlari[store + 1] = sum(toplam)
                     #magaza_toplamlari listesinin örnek verilen dictionary'e göre örneği
                     #['flo', 3515, 'vestel', 33450]     
-                    
-                         
+
+
     def __str__(self):
         toplamlar = ""
         for i in range (0, len(Magaza.magaza_toplamlari), 2):
