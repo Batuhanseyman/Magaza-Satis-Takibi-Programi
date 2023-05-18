@@ -65,7 +65,41 @@ class Magaza :
         return toplamlar 
                             
 def main ():
-  pass  
+    satislar = {}
+    print ("----------Satis bilgilerini giriniz-----------")
+    print ("")
+
+    while True:
+
+        magaza_adi = input ("Mağazanin adini giriniz : ")
+        satici_adi = input ("Saticinin adini giriniz : ")
+        satici_cinsi = input ("Saticinin cinsini giriniz" +
+         " (tv, bilgisayar, beyaz eşya, diğer) : ")
+        satis_tutari = float (input("Saticinin satis tutarini giriniz : "))
+        print("")
+        satis = Magaza(magaza_adi, satici_adi, satici_cinsi)
+        
+        key1 = satis.get_magaza_adi()
+        key2 = (satis.get_satici_adi(),satis.get_satici_cinsi())
+
+        #Tanımlanan dictionary'nin yapısı hakkında bir örnek:
+        #{flo: {('Ali', 'diğer'):[780, 850], ('Veli', 'diğer'):[1200, 685]}, vestel:{('ece', 'beyaz eşya'):[12000, 5500],('ada', tv):[5450, 10500]}}
+        
+        if key1 not in satislar:
+            satislar[key1] = {}
+    
+        if key2 not in satislar[key1]:
+            satislar[key1][key2] = [satis_tutari]
+
+        elif key1 in satislar and key2 in satislar[key1]:
+            satislar[key1][key2].append(satis_tutari)
+
+        satis.magaza_satis_tutar(satislar)
+        print(satis)
+        devam_durumu = input("Devam etmek istiyor musunuz?(e/E/h/H)")
+        print("")
+        if devam_durumu == "h" or devam_durumu == "H":
+            break
     
 if __name__ == "__main__":
     main()
