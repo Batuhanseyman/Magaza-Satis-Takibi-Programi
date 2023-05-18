@@ -14,6 +14,15 @@ class Magaza :
 
     def set_satici_cinsi (self, satici_cinsi):
         self.__satici_cinsi = satici_cinsi
+    
+    def get_magaza_adi (self):
+        return self.__magaza_adi
+    
+    def get_satici_adi (self):
+        return self.__satici_adi
+    
+    def get_satici_cinsi (self):
+        return self.__satici_cinsi
  
                             
 def main ():
